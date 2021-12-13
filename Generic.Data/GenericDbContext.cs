@@ -12,10 +12,10 @@ public class GenericDbContext : DbContext
     {
 
     }
-    public DbSet<MethodAction> Actions => Set<MethodAction>();
+    public DbSet<RequestAction> Actions => Set<RequestAction>();
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-       modelBuilder.ApplyConfigurationsFromAssembly(typeof(MethodAction).Assembly);
+       modelBuilder.ApplyConfigurationsFromAssembly(typeof(RequestAction).Assembly);
     }
 }
 
