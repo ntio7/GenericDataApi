@@ -30,6 +30,7 @@ class GenericContextFactory : IDesignTimeDbContextFactory<GenericDbContext>
             .UseSqlServer(configuration["ConnectionStrings:DefaultConnection"]);
 
         return new GenericDbContext(optionsBuilder.Options);
+        //
     }
 }
 
