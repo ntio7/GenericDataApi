@@ -2,7 +2,8 @@
 
 namespace Generic.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
     [ApiController]
     public class ApiController : ControllerBase
     {
@@ -15,6 +16,7 @@ namespace Generic.Controllers
 
         // GET api/<ApiController>/5
         [HttpGet("{id}")]
+        [ApiVersion("2.0")]
         public string Get(int id)
         {
             return "value";
