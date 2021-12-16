@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Generic.BL;
 
 namespace Generic.Controllers
 {
@@ -7,19 +8,30 @@ namespace Generic.Controllers
     [ApiController]
     public class ApiController : ControllerBase
     {
+        private readonly IGenericRepository? Repository;
+
+        public ApiController(IGenericRepository Repository)
+        {
+            this.Repository = Repository;
+        }
+
         // GET: api/<ApiController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult<string> Get()
         {
-            return new string[] { "value1", "value2" };
+
+            return Repository.GetItems();
+
+           // return new string[] { "value1", "value2" };
         }
 
         // GET api/<ApiController>/5
         [HttpGet("{id}")]
         [ApiVersion("2.0")]
-        public string Get(int id)
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
+        public IActionResult Get(int id)
         {
-            return "value";
+            return Ok("value");
         }
 
         // POST api/<ApiController>

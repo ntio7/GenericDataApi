@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Generic.BL.Services
+namespace Generic.BL
 {
     public class ExectueServise
     {

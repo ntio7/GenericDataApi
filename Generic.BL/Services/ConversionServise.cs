@@ -1,7 +1,7 @@
 ﻿using Generic.Data.Models;
 using Newtonsoft.Json;
 
-namespace Generic.BL.Services
+namespace Generic.BL
 {
     public class ConversionService
     {

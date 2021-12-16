@@ -10,18 +10,19 @@ using System.Threading.Tasks;
 
 namespace Generic.Data.Models
 {
-    public class RequestType
+    public class ActionHeader
     {
-        public int Id { get; set; }  
-        public Guid Token { get; set; }
+      
+        public int Id { get; set; }
+        public int ActionId { get; set; }
         public string Name { get; set; } = String.Empty;
-        public string Description { get; set; } = String.Empty;
+        public string Value { get; set; } = String.Empty;
 
-        public class MethodActionEntityTypeConfiguration : IEntityTypeConfiguration<RequestType>
+        public class MethodActionEntityTypeConfiguration : IEntityTypeConfiguration<ActionHeader>
         {
-            public void Configure(EntityTypeBuilder<RequestType> builder)
+            public void Configure(EntityTypeBuilder<ActionHeader> builder)
             {
-                      builder.HasKey(A => A.Id);
+                builder.HasKey(A => A.Id);
                 //    builder.Property(A => A.Action);
             }
         }

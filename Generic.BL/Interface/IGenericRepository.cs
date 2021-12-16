@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Generic.BL.Repository
+namespace Generic.BL
 {
-    internal class Class1
+    public interface IGenericRepository
     {
+
+        public string GetItems();
     }
 }

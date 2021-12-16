@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Generic.BL\Generic.BL.csproj" />
     <ProjectReference Include="..\Generic.Data\Generic.Data.csproj" />
     <ProjectReference Include="..\Generic.Logger\Generic.Logger.csproj" />
   </ItemGroup>

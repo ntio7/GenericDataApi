@@ -10,20 +10,24 @@ using System.Threading.Tasks;
 
 namespace Generic.Data.Models
 {
-    public class RequestType
+    /// <summary>
+    /// ActionTyps = Api, Porcidure, from file - dll,send mail, sms...
+    /// </summary>
+    public class ActionType
     {
-        public int Id { get; set; }  
-        public Guid Token { get; set; }
+       
+        public int Id { get; set; }
         public string Name { get; set; } = String.Empty;
         public string Description { get; set; } = String.Empty;
 
-        public class MethodActionEntityTypeConfiguration : IEntityTypeConfiguration<RequestType>
+        public class MethodActionEntityTypeConfiguration : IEntityTypeConfiguration<ActionType>
         {
-            public void Configure(EntityTypeBuilder<RequestType> builder)
+            public void Configure(EntityTypeBuilder<ActionType> builder)
             {
-                      builder.HasKey(A => A.Id);
+                builder.HasKey(A => A.Id);
                 //    builder.Property(A => A.Action);
             }
         }
+
     }
 }

@@ -1,7 +1,6 @@
-using Generic.Controllers;
-
+using Generic.BL;
+using Generic.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Versioning;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,8 +17,10 @@ builder.Services.AddApiVersioning(option =>
     option.ReportApiVersions = true;
 });
 
-
+builder.Services.AddSingleton<IGenericRepository, GenericRepository>();
+builder.Services.AddScoped<GenericDbContext>();
 var app = builder.Build();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -28,9 +29,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
